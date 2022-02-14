@@ -16,7 +16,7 @@ public class PostBuilder {
 
         Post post = new Post();
         post.setName(this.name, writer);
-        post.setAuthor(writer.alias, writer);
+        post.setAuthor(writer.getAlias(), writer);
         post.setDate(this.date, writer);
         post.setContent(this.content, writer);
         return post;

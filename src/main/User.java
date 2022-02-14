@@ -1,11 +1,16 @@
 package main;
 
 public class User {
-    String alias;
+
+
+    private String alias;
 
     public User(String alias) {
         this.alias = alias;
     }
 
+    public String getAlias() {
+        return alias;
+    }
 
 }

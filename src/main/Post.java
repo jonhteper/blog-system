@@ -95,4 +95,27 @@ public class Post {
         }
         isDeleted = deleted;
     }
+
+    static String asterisks() {
+        return "\n******************************************************************\n";
+    }
+
+    public void read(User user) throws BlogException {
+        if (this.isDeleted) {
+            throw new BlogException(ExceptionType.DeletedItem);
+        }
+
+        String text =  String.format(
+                "%sWelcome %s\n\nTitle: %s\nDate: %s\t\tAuthor: %s\n\n%s%s",
+                asterisks(),
+                user.getAlias(),
+                this.name,
+                this.date,
+                this.author,
+                this.content,
+                asterisks()
+        );
+
+        System.out.println(text);
+    }
 }
